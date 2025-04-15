@@ -1,0 +1,15 @@
+import { Navbar } from "./components/layout/navbar";
+import { Separator } from "./components/ui/separator";
+import { Home } from "./pages/home";
+
+function App() {
+  return (
+    <div className="flex flex-col bg-blue w-full h-screen">
+      <Navbar />
+      <Separator  />
+      <Home />
+    </div>
+  );
+}
+
+export default App
