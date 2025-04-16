@@ -57,12 +57,12 @@ body,
 }
 
 :root {
-  --skill: #FEC518;
+  --skill: #0D0D0D;
   --warning: oklch(0.84 0.16 84);
   --warning-foreground: oklch(0.28 0.07 46);
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #F2F2F2;
+  --foreground: #0D0D0D;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -95,6 +95,7 @@ body,
 }
 
 .dark {
+  --skill: #FEC518;
   --warning: oklch(0.41 0.11 46);
   --warning-foreground: oklch(0.99 0.02 95);
   --background: #262626;

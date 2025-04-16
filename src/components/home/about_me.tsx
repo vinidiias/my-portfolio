@@ -58,7 +58,7 @@ export const AboutMe: React.FC = () => {
             </p>
             <div className="flex gap-5 items-center mt-5">
               <Button className="bg-skill">Download CV</Button>
-              <Button variant={"outline"}>Entrar em contato</Button>
+              <Button variant={"outline"} className="bg-[#fffa]">Entrar em contato</Button>
             </div>
           </motion.div>
         </div>

@@ -7,7 +7,8 @@ export const Home: React.FC = () => {
       <div className="flex flex-col flex-1 gap-15 mt-10 py-10">
         <AboutMe />
         <Separator />
-       <Technologies />
+        <Technologies />
+        <Separator />
       </div>
     );
 }
