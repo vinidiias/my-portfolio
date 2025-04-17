@@ -56,49 +56,42 @@ export const Technologies: React.FC = () => {
   );
 
   return (
-    <section className="flex justify-center gap-10 w-[1000px]">
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        whileInView={{ opacity: 1, height: 'auto' }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
-        <Separator orientation="vertical" className="bg-skill light:border-[#262626] border-4" />
-      </motion.div>
-      <div className="flex flex-col gap-5 py-5">
-        <h2 className="text-4xl font-bold mb-4 tracking-tight">
-          Tecnologias
-        </h2>
-        <div className="grid grid-cols-7 items-center gap-y-10 gap-x-15">
-          <TooltipProvider>
-            {items.map((item) => (
-              <motion.div
-                whileHover={{
-                  scale: [null, 1.2, 1.2],
-                  transition: {
-                    duration: 0.5,
-                    times: [0, 0.6, 1],
-                    ease: ["easeInOut", "easeOut"],
-                  },
-                }}
-                initial={{ opacity: 0, x: item.x }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true, }}
-              >
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <img src={item.icon} alt={item.title} className="w-14" />
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{item.title}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </motion.div>
-            ))}
-          </TooltipProvider>
+    <section className="w-full">
+        <div className="flex flex-col items-center gap-5 py-5">
+          <h2 className="text-3xl text-center font-semibold mb-4 tracking-tight">
+            Tecnologias
+          </h2>
+          <div className="flex flex-wrap justify-center gap-y-10 gap-x-15 max-w-[1000px]">
+            <TooltipProvider>
+              {items.map((item) => (
+                <motion.div
+                  className="border-1 border-gray bg-card flex items-center p-3 px-4 rounded shadow"
+                  whileHover={{
+                    scale: [null, 1.2, 1.2],
+                    transition: {
+                      duration: 0.5,
+                      times: [0, 0.6, 1],
+                      ease: ["easeInOut", "easeOut"],
+                    },
+                  }}
+                  initial={{ opacity: 0, x: item.x }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <img src={item.icon} alt={item.title} className="w-15" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{item.title}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </motion.div>
+              ))}
+            </TooltipProvider>
+          </div>
         </div>
-      </div>
     </section>
   );
 };

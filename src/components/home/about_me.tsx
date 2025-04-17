@@ -2,11 +2,12 @@ import { AspectRatio } from "../ui/aspect-ratio"
 import { Button } from "../ui/button"
 import me_rounded from '@/assets/me_rounded.png'
 import * as motion from 'motion/react-client'
+import { FiLinkedin } from "react-icons/fi";
 
 export const AboutMe: React.FC = () => {
     return (
-      <section className="flex justify-center w-full">
-        <div className="flex gap-5 max-w-[1000px] w-full">
+      <section className="m-auto w-[1000px]">
+        <div className="flex justify-center gap-10 w-full">
           <motion.div
           initial={{ x: -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -59,6 +60,7 @@ export const AboutMe: React.FC = () => {
             <div className="flex gap-5 items-center mt-5">
               <Button className="bg-skill">Download CV</Button>
               <Button variant={"outline"} className="bg-[#fffa]">Entrar em contato</Button>
+              <Button variant='outline' size='icon'><FiLinkedin /></Button>
             </div>
           </motion.div>
         </div>
