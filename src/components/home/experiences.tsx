@@ -1,5 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { TimelineLayout } from "../ui/timeline-layout";
+import * as motion from "motion/react-client"
 
 type ExperincesType = {
   title: string;
@@ -30,33 +32,14 @@ export const Experiences: React.FC = () => {
           <h2 className="text-3xl font-semibold mb-4 tracking-tight">
             Experiências
           </h2>
-          <div>
-            <Tabs defaultValue="exp 1" className="w-[900px]">
-              <TabsList className="grid w-full grid-cols-6">
-                {Array.from({ length: 6 }).map((_, index) => (
-                  <TabsTrigger value={`exp ${index + 1}`}>{`Experiência ${
-                    index + 1
-                  }`}</TabsTrigger>
-                ))}
-              </TabsList>
-              {experiences?.map((item, index) => (
-                <TabsContent key={index} value={`exp ${index + 1}`}>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-2xl">
-                        {item.title} -{" "}
-                        <span className="font-normal text-xl dark:text-[#BDBEBF]">{item.period}</span>
-                      </CardTitle>
-                      <CardDescription className="text-xl text-skill">{item.enterprise}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                      <p className="text-lg dark:text-[#BDBEBF]">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-              ))}
-            </Tabs>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <TimelineLayout />
+          </motion.div>
         </div>
       </section>
     );
