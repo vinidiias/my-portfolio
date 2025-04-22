@@ -1,5 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { TimelineLayout } from "../ui/timeline-layout";
 import * as motion from "motion/react-client"
 

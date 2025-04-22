@@ -1,5 +1,6 @@
 import { AboutMe } from '@/components/home/about_me';
 import { Experiences } from '@/components/home/experiences';
+import { Projects } from '@/components/home/projects';
 import { Technologies } from '@/components/home/technologies';
 import { Separator } from '@/components/ui/separator';
 
@@ -11,6 +12,7 @@ export const Home: React.FC = () => {
         <Technologies />
         <Separator />
         <Experiences />
+        <Projects />
       </div>
     );
 }

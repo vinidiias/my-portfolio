@@ -9,6 +9,7 @@ function App() {
       <Navbar />
       <Separator  />
       <Home />
+      <Separator />
       <Footer />
     </div>
   );
