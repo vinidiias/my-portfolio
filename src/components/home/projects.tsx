@@ -36,7 +36,7 @@ export const Projects = () => {
             {projects.map((project, index) => (
               <Card key={index} className="w-[350px] gap-0">
               <CardHeader>
-                <CardTitle>Calisthenics {project.title}</CardTitle>
+                <CardTitle>{project.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col group relative">
