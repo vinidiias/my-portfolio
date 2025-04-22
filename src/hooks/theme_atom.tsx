@@ -11,7 +11,7 @@ const getInitialTheme = (): Theme => {
 
 export const themeAtom = atom<Theme>(getInitialTheme())
 
-export const setThemeAtom = atom(null, (get, set, newTheme: Theme) => {
+export const setThemeAtom = atom(null, (_, set, newTheme: Theme) => {
   localStorage.setItem(storageKey, newTheme)
   set(themeAtom, newTheme)
 })

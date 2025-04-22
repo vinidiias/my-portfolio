@@ -21,7 +21,6 @@ import github_black from "@/assets/github_black.svg";
 import github_white from "@/assets/github_white.svg";
 import vercel_black from "@/assets/vercel_black.svg";
 import vercel_white from "@/assets/vercel_white.svg";
-import { Separator } from "../ui/separator";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { useTheme } from "@/hooks/useTheme";
 import { useMemo } from "react";

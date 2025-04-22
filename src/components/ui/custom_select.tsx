@@ -1,4 +1,4 @@
-import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "./select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 import { useTheme } from "@/hooks/useTheme";
 
 interface CustomSelectProps {
@@ -8,10 +8,8 @@ interface CustomSelectProps {
     placeholder?: string;
 }
 
-export const CustomSelect: React.FC<CustomSelectProps> = ({ value, onChange, label, placeholder }) => {
+export const CustomSelect: React.FC<CustomSelectProps> = ({ placeholder }) => {
     const { theme, setTheme } = useTheme()
-
-    console.log(theme)
 
     return (
       <Select value={theme} onValueChange={setTheme}>
