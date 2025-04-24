@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import cw from '../../assets/screenshots/cw-screenshot.png'
 import todo_list from '../../assets/screenshots/todo-list-screenshot.png'
 import e_market from '../../assets/screenshots/emarket-screenshot.png'
@@ -8,19 +8,21 @@ import netflix from '../../assets/screenshots/netflix-screenshot.png'
 import social_media from '../../assets/screenshots/social-media-screenshot.png'
 import smart_soft from '../../assets/screenshots/smart-soft-screenshot.png'
 import recipe from '../../assets/screenshots/recipe-screenshot.png'
+import { VscDebugStart } from "react-icons/vsc";
+import { FaGithub } from "react-icons/fa";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { Button } from "../ui/button";
 
 const projects = [
-  { title: 'Calisthenics Workout', photo: cw },
-  { title: 'Todo-List', photo: todo_list },
-  { title: 'E-Market', photo: e_market },
-  { title: 'Sistema de Gestão de Eventos', photo: evento },
-  { title: 'Catalogo Crochê', photo: croche },
-  { title: 'Netflix for my GF', photo: netflix },
-  { title: 'Social Media', photo: social_media },
-  { title: 'Smart Soft Auth', photo: smart_soft },
-  { title: 'Recipe Page', photo: recipe },
+  { title: 'Calisthenics Workout', photo: cw, link: 'https://calisthenics-workout-knqn.vercel.app', github: 'https://github.com/vinidiias/calisthenics-workout' },
+  { title: 'Todo-List', photo: todo_list, link: 'https://todo-list-omega-sooty.vercel.app/login', github: 'https://github.com/vinidiias/todo-list' },
+  { title: 'E-Market', photo: e_market, link: 'https://e-market-iota.vercel.app', github: 'https://github.com/vinidiias/e-market' },
+  { title: 'Sistema de Gestão de Eventos', photo: evento, link: 'https://sistema-gestao-de-eventos.vercel.app/login', github: 'https://github.com/vinidiias/sistema-gestao-de-eventos' },
+  { title: 'Catalogo Crochê', photo: croche, link: 'https://catalogo-croche.vercel.app', github: 'https://github.com/vinidiias/catalogo_croche' },
+  { title: 'Netflix for my GF', photo: netflix, link: 'https://netfix-mylove.vercel.app', github: 'https://github.com/vinidiias/netfix_girlfriend' },
+  { title: 'Social Media', photo: social_media, link: 'https://social-media-react-seven.vercel.app', github: 'https://github.com/vinidiias/social-media-react' },
+  { title: 'Smart Soft Auth', photo: smart_soft, link: 'https://login-screen-smart-soft.vercel.app', github: 'https://github.com/vinidiias/login-screen-smart-soft' },
+  { title: 'Recipe Page', photo: recipe, link: 'https://recipe-page-main-eosin.vercel.app', github: 'https://github.com/vinidiias/recipe-page-main' },
 ];
 
 export const Projects = () => {
@@ -52,6 +54,10 @@ export const Projects = () => {
                   </div>
                 </div>
               </CardContent>
+              <CardFooter className="flex justify-between mt-1">
+                <a href={project.link} target="_blank"><Button variant='ghost' size='default'>Start<VscDebugStart /></Button></a>
+                <a href={project.github} target="_blank"><Button variant='ghost' size='icon'><FaGithub size='large' /></Button></a>
+              </CardFooter>
             </Card>
             ))}
           </div>
