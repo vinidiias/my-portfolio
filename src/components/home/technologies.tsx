@@ -23,12 +23,28 @@ import vercel_black from "@/assets/vercel_black.svg";
 import vercel_white from "@/assets/vercel_white.svg";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { useTheme } from "@/hooks/useTheme";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import * as motion from "motion/react-client"
 
 export const Technologies: React.FC = () => {
   const { theme } = useTheme()
-  console.log(theme)
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    const handleChange = () => setIsMobile(mediaQuery.matches);
+
+    // define o valor inicial
+    handleChange();
+
+    // escuta mudanças
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   const items = useMemo(
     () => [
       { id: 1, icon: html, title: "HTML", x: 300 },
@@ -54,6 +70,8 @@ export const Technologies: React.FC = () => {
     [theme]
   );
 
+  console.log(isMobile)
+
   return (
     <section className="w-full" id="technologies">
         <div className="flex flex-col items-center gap-5 py-5">
@@ -74,7 +92,7 @@ export const Technologies: React.FC = () => {
                       ease: ["easeInOut", "easeOut"],
                     },
                   }}
-                  initial={{ opacity: 0, x: item.x }}
+                  initial={{ opacity: 0, x: !isMobile ? 50 : item.x }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1 }}
                   viewport={{ once: true }}
