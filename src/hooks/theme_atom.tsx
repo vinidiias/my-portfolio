@@ -5,8 +5,8 @@ export type Theme = "dark" | "light" | "system"
 const storageKey = 'vite-ui-theme'
 
 const getInitialTheme = (): Theme => {
-  if(typeof window === "undefined") return "system"
-  return (localStorage.getItem(storageKey) as Theme) || "system"
+  if(typeof window === "undefined") return "dark"
+  return (localStorage.getItem(storageKey) as Theme) || "dark"
 }
 
 export const themeAtom = atom<Theme>(getInitialTheme())
