@@ -5,7 +5,7 @@ import { Home } from "./pages/home";
 
 function App() {
   return (
-    <div className="flex flex-col bg-blue w-full h-screen">
+    <div className="flex flex-col bg-blue w-full h-screen overflow-x-hidden">
       <Navbar />
       <Separator  />
       <Home />
