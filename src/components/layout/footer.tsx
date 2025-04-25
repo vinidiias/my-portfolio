@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
     const { theme } = useTheme()
 
     return (
-        <footer className="flex max-sm:flex-col max-sm:gap-3 items-center justify-between w-full px-10">
+        <footer className="flex max-sm:flex-col max-sm:gap-3 max-sm:my-3 items-center justify-between w-full px-10">
             <img src={theme === 'dark' ? logoWhite : logoBlack} alt="" className="min-w-25 w-25 max-sm:hidden" />
             <div className="flex items-center gap-3">
                 {social_medias_list.map((item, index) => (
