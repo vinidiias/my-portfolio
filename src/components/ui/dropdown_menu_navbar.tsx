@@ -34,7 +34,7 @@ export const DropdownMenuNavbar: React.FC = () => {
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             {options.map((op, index) => (
-              <DropdownMenuItem onSelect={(e) => redirect({ event: e, id: op.id })}>
+              <DropdownMenuItem key={index} onSelect={(e) => redirect({ event: e, id: op.id })}>
                 <span>{op.label}</span>
               </DropdownMenuItem>
             ))}
