@@ -55,7 +55,7 @@ export const Technologies: React.FC = () => {
   );
 
   return (
-    <section className="w-full">
+    <section className="w-full" id="technologies">
         <div className="flex flex-col items-center gap-5 py-5">
           <h2 className="text-3xl text-center font-semibold mb-4 tracking-tight">
             Tecnologias
@@ -64,6 +64,7 @@ export const Technologies: React.FC = () => {
             <TooltipProvider>
               {items.map((item) => (
                 <motion.div
+                key={item.id}
                   className="border-1 border-gray bg-card flex items-center p-3 px-4 rounded shadow"
                   whileHover={{
                     scale: [null, 1.2, 1.2],
@@ -80,7 +81,7 @@ export const Technologies: React.FC = () => {
                 >
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <img src={item.icon} alt={item.title} className="w-15" />
+                      <img src={item.icon} alt={item.title} className="w-15 max-md:w-10" />
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{item.title}</p>

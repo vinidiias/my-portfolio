@@ -17,11 +17,11 @@ export const Footer: React.FC = () => {
     const { theme } = useTheme()
 
     return (
-        <footer className="flex items-center justify-between w-full px-10">
-            <img src={theme === 'dark' ? logoWhite : logoBlack} alt="" className="min-w-25 w-25" />
+        <footer className="flex max-sm:flex-col max-sm:gap-3 items-center justify-between w-full px-10">
+            <img src={theme === 'dark' ? logoWhite : logoBlack} alt="" className="min-w-25 w-25 max-sm:hidden" />
             <div className="flex items-center gap-3">
                 {social_medias_list.map((item, index) => (
-                    <a key={index} href="">{item}</a>
+                    <a key={index} href={['https://x.com/vininoites_', 'https://www.facebook.com/vinicius.dias.9216778/?locale=pt_BR', 'https://www.linkedin.com/in/vinicius-diass/', 'https://www.instagram.com/viniciusdiias_/'][index]} target="_blank">{item}</a>
                 ))}
             </div>
             <p>© 2025 Vinícius Dias</p>

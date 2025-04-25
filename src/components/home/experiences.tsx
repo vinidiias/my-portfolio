@@ -3,7 +3,7 @@ import * as motion from "motion/react-client"
 
 export const Experiences: React.FC = () => {
     return (
-      <section className="w-full">
+      <section className="w-full" id="experiences">
         <div className="flex flex-col items-center gap-10">
           <h2 className="text-3xl font-semibold mb-4 tracking-tight">
             Experiências

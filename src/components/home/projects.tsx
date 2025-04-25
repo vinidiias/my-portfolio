@@ -27,16 +27,15 @@ const projects = [
 
 export const Projects = () => {
     //const [projectselected, setProjectSelected] = useState(null)
-
     return (
-      <section className="w-full">
+      <section className="w-full" id="projects">
         <div className="flex flex-col items-center gap-10">
           <h2 className="text-3xl text-center font-semibold mb-4 tracking-tight">
             Projetos
           </h2>
           <div className="flex flex-wrap justify-center gap-y-10 gap-x-15 max-w-[1200px]">
             {projects.map((project, index) => (
-              <Card key={index} className="w-[350px] gap-0">
+              <Card key={index} className="w-[350px] max-md:w-[300px] gap-0">
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
               </CardHeader>
