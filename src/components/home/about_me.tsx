@@ -61,7 +61,7 @@ export const AboutMe: React.FC = () => {
           </div>
           <div className="flex gap-5 items-center justify-center md:justify-start mt-5">
             <Button className="bg-skill" asChild>
-              <a href="/public/CV_ViniDias.zip" download>
+              <a href="/CV_ViniDias.pdf" download>
                 Download CV
               </a>
             </Button>
