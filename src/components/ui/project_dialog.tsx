@@ -91,11 +91,47 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
   return (
     <Drawer open={open} onOpenChange={handleClose}>
       <DrawerContent>
-        <DrawerHeader className="text-left">
-          <DrawerTitle>Edit profile</DrawerTitle>
-          <DrawerDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DrawerDescription>
+        <DrawerHeader className="text-center">
+          <DrawerTitle>{project?.title}</DrawerTitle>
+          <div className="flex flex-col gap-3">
+            <AspectRatio ratio={16 / 9}>
+              <img
+                src={project?.photo}
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </AspectRatio>
+            <div>
+              <p className="leading-6 text-justify [&:not(:first-child)]:mt-3">
+                {project?.about}
+              </p>
+            </div>
+            <Separator />
+            <div className="flex flex-wrap items-center justify-center gap-5">
+              {project?.tech?.map((photo) => (
+                <Button variant={"secondary"}>
+                  <img
+                    src={photo}
+                    alt={`${project.title} - ${photo}`}
+                    className="w-5"
+                  />
+                </Button>
+              ))}
+            </div>
+            <div className="flex justify-around">
+                <a href={project?.link} target="_blank">
+                  <Button variant="ghost" size="default">
+                    Start
+                    <VscDebugStart />
+                  </Button>
+                </a>
+                <a href={project?.github} target="_blank">
+                  <Button variant="ghost" size="icon">
+                    <FaGithub size="large" />
+                  </Button>
+                </a>
+              </div>
+          </div>
         </DrawerHeader>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
