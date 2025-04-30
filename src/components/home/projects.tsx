@@ -27,6 +27,7 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 import { ProjectDialog } from "../ui/project_dialog";
 import { ProjecInfo } from "@/types/project";
+import { UseMediaQuery } from "@/hooks/use_media_query";
 
 const projects: ProjecInfo[] = [
   { title: 'Calisthenics Workout', photo: cw, link: 'https://calisthenics-workout-knqn.vercel.app', github: 'https://github.com/vinidiias/calisthenics-workout', tech: [react, material_ui, tailwindcss, query, jotai, node, mongoDB, docker], about: 'Calisthenics Workout é uma rede social voltada para entusiastas da calistenia, onde os usuários podem criar, agendar e participar de treinos com data e hora marcadas. Além disso, a plataforma permite seguir outros usuários, incentivando a interação e o engajamento entre praticantes.' },
@@ -44,6 +45,8 @@ export const Projects = () => {
     const [projectselected, setProjectSelected] = useState<ProjecInfo | null>(null)
     const [open, setOpen] = useState(false)
 
+      const isDesktop = UseMediaQuery("(min-width: 768px)");
+
     const handleClick = (project: ProjecInfo): void => {
       console.log(project)
         setOpen(true)
@@ -52,7 +55,11 @@ export const Projects = () => {
 
     return (
       <section className="w-full" id="projects">
-        <ProjectDialog project={projectselected} open={open} handleClose={() => setOpen(false)}  />
+        <ProjectDialog
+          project={projectselected}
+          open={open}
+          handleClose={() => setOpen(false)}
+        />
         <div className="flex flex-col items-center gap-10">
           <h2 className="text-3xl text-center font-semibold mb-4 tracking-tight">
             Projetos
@@ -60,28 +67,42 @@ export const Projects = () => {
           <div className="flex flex-wrap justify-center gap-y-10 gap-x-15 max-w-[1200px]">
             {projects.map((project, index) => (
               <Card key={index} className="w-[350px] max-md:w-[300px] gap-0">
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-col group relative">
-                  <AspectRatio ratio={4 / 3}>
-                    <img
-                      src={project.photo}
-                      alt="a"
-                      className="w-full h-full object-contain"
-                    />
-                  </AspectRatio>
-                  <div className="absolute inset-0 flex items-center justify-center bg-background opacity-0 group-hover:opacity-80 transition-opacity duration-300 ease-in-out">
-                    <Button onClick={() => handleClick(project)}>Saiba mais</Button>
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-col group relative">
+                    <AspectRatio ratio={4 / 3}>
+                      <img
+                        src={project.photo}
+                        alt="a"
+                        className="w-full h-full object-contain"
+                      />
+                    </AspectRatio>
+                    <div className="absolute inset-0 flex items-center justify-center bg-background opacity-0 group-hover:opacity-80 transition-opacity duration-300 ease-in-out">
+                      <Button onClick={() => handleClick(project)}>
+                        Saiba mais
+                      </Button>
+                    </div>
+                    {!isDesktop && (
+                    <Button variant="secondary">Saiba mais</Button>
+                  )}
                   </div>
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-between mt-1">
-                <a href={project.link} target="_blank"><Button variant='ghost' size='default'>Start<VscDebugStart /></Button></a>
-                <a href={project.github} target="_blank"><Button variant='ghost' size='icon'><FaGithub size='large' /></Button></a>
-              </CardFooter>
-            </Card>
+                </CardContent>
+                <CardFooter className="flex justify-between mt-1">
+                  <a href={project.link} target="_blank">
+                    <Button variant="ghost" size="default">
+                      Start
+                      <VscDebugStart />
+                    </Button>
+                  </a>
+                  <a href={project.github} target="_blank">
+                    <Button variant="ghost" size="icon">
+                      <FaGithub size="large" />
+                    </Button>
+                  </a>
+                </CardFooter>
+              </Card>
             ))}
           </div>
         </div>
