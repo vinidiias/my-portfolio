@@ -29,8 +29,6 @@ interface ProjectDialogProps {
 export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose, project }) => {
   const isDesktop = UseMediaQuery("(min-width: 768px)");
 
-  console.log(project)
-
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={handleClose}>
@@ -89,7 +87,7 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
 
   return (
     <Drawer open={open} onOpenChange={handleClose}>
-      <DrawerContent>
+      <DrawerContent className="max-h-screen">
         <DrawerHeader className="text-center">
           <DrawerTitle>{project?.title}</DrawerTitle>
           <div className="flex flex-col gap-3">
@@ -118,18 +116,18 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
               ))}
             </div>
             <div className="flex justify-around">
-                <a href={project?.link} target="_blank">
-                  <Button variant="ghost" size="default">
-                    Start
-                    <VscDebugStart />
-                  </Button>
-                </a>
-                <a href={project?.github} target="_blank">
-                  <Button variant="ghost" size="icon">
-                    <FaGithub size="large" />
-                  </Button>
-                </a>
-              </div>
+              <a href={project?.link} target="_blank">
+                <Button variant="ghost" size="default">
+                  Start
+                  <VscDebugStart />
+                </Button>
+              </a>
+              <a href={project?.github} target="_blank">
+                <Button variant="ghost" size="icon">
+                  <FaGithub size="large" />
+                </Button>
+              </a>
+            </div>
           </div>
         </DrawerHeader>
         <DrawerFooter className="pt-2">
