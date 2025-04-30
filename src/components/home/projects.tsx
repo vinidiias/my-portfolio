@@ -3,25 +3,14 @@ import html from "@/assets/html.svg";
 import css from "@/assets/css.svg";
 import js from "@/assets/js.svg";
 import react from "@/assets/react.svg";
-import ts from "@/assets/ts.svg";
 import tailwindcss from "@/assets/tailwindcss.svg";
 import bootstrap from "@/assets/bootstrap.svg";
 import query from "@/assets/query.svg";
-import hook_form from "@/assets/hook-form.png";
 import jotai from "@/assets/jotai.svg";
-import jotai_dark from "@/assets/jotai_black.svg";
 import material_ui from "@/assets/material-ui.svg";
-import shadcn_ui from "@/assets/shadcn-ui.svg";
 import node from "@/assets/node.svg";
-import express_white from "@/assets/express_white.svg";
-import express_black from "@/assets/express_black.svg";
 import mongoDB from "@/assets/mongoDB.svg";
 import docker from "@/assets/docker.svg";
-import git from "@/assets/git.svg";
-import github_black from "@/assets/github_black.svg";
-import github_white from "@/assets/github_white.svg";
-import vercel_black from "@/assets/vercel_black.svg";
-import vercel_white from "@/assets/vercel_white.svg";
 import cw from '../../assets/screenshots/cw-screenshot.png'
 import todo_list from '../../assets/screenshots/todo-list-screenshot.png'
 import e_market from '../../assets/screenshots/emarket-screenshot.png'
@@ -40,7 +29,7 @@ import { ProjectDialog } from "../ui/project_dialog";
 import { ProjecInfo } from "@/types/project";
 
 const projects: ProjecInfo[] = [
-  { title: 'Calisthenics Workout', photo: cw, link: 'https://calisthenics-workout-knqn.vercel.app', github: 'https://github.com/vinidiias/calisthenics-workout', tech: [react, material_ui, tailwindcss, query, jotai, node, mongoDB], about: 'Calisthenics Workout é uma rede social voltada para entusiastas da calistenia, onde os usuários podem criar, agendar e participar de treinos com data e hora marcadas. Além disso, a plataforma permite seguir outros usuários, incentivando a interação e o engajamento entre praticantes.' },
+  { title: 'Calisthenics Workout', photo: cw, link: 'https://calisthenics-workout-knqn.vercel.app', github: 'https://github.com/vinidiias/calisthenics-workout', tech: [react, material_ui, tailwindcss, query, jotai, node, mongoDB, docker], about: 'Calisthenics Workout é uma rede social voltada para entusiastas da calistenia, onde os usuários podem criar, agendar e participar de treinos com data e hora marcadas. Além disso, a plataforma permite seguir outros usuários, incentivando a interação e o engajamento entre praticantes.' },
   { title: 'Todo-List', photo: todo_list, link: 'https://todo-list-omega-sooty.vercel.app/login', github: 'https://github.com/vinidiias/todo-list', tech: [react, node, mongoDB], about: 'Todo List é uma aplicação full stack de gerenciamento de tarefas que permite aos usuários realizar operações completas de CRUD (criar, ler, atualizar e deletar tarefas). Além disso, as tarefas podem ser marcadas como finalizadas. A aplicação conta com autenticação de usuário, garantindo que cada pessoa tenha acesso apenas às suas próprias tarefas.' },
   { title: 'E-Market', photo: e_market, link: 'https://e-market-iota.vercel.app', github: 'https://github.com/vinidiias/e-market', tech: [html, css, js, bootstrap], about: 'E-Market é um mercadinho online onde os usuários podem visualizar, adicionar e remover produtos, além de adicionar itens ao carrinho de compras. O projeto simula operações de um e-commerce básico, utilizando o JSON-Server como banco de dados, oferecendo uma experiência de front-end integrada com uma API fake para persistência dos dados.' },
   { title: 'Sistema de Gestão de Eventos', photo: evento, link: 'https://sistema-gestao-de-eventos.vercel.app/login', github: 'https://github.com/vinidiias/sistema-gestao-de-eventos', tech: [react], about: 'Sistema de Gestão de Eventos é uma aplicação front-end que permite aos usuários criar e participar de eventos, oferecendo uma interface intuitiva para o gerenciamento de atividades. O foco está na experiência do usuário ao interagir com eventos, seja como organizador ou participante.' },
