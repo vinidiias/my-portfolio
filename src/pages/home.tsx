@@ -12,6 +12,7 @@ export const Home: React.FC = () => {
         <Experiences />
         <Separator />
         <Technologies />
+        <Separator />
         <Projects />
       </div>
     );
