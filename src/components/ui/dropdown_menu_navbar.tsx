@@ -26,7 +26,7 @@ const options = [
 export const DropdownMenuNavbar: React.FC = () => {
     return (
       <DropdownMenu modal={false}>
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger>
           <Button type="button" variant="outline"><Menu /></Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-35">
