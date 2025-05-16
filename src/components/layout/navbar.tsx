@@ -1,13 +1,13 @@
-import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
-import { CustomSelect } from "../ui/custom_select";
+import { Menubar, MenubarMenu } from "@/components/ui/menubar";
 import logoBlack from '../../assets/logo_black.png'
 import logoWhite from '../../assets/logo_white.png'
 import { useTheme } from "@/hooks/useTheme";
 import { DropdownMenuNavbar } from "../ui/dropdown_menu_navbar";
-import { SunMoon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
+import { Button } from "../ui/button";
 
 export const Navbar = () => {
-    const { theme } = useTheme()
+    const { theme, setTheme } = useTheme()
     return (
       <Menubar className="bg-blue justify-end p-6 py-7 shadow-none border-b border-b-0 border-b-skill rounded-none">
         <div className="flex-1">
@@ -17,16 +17,13 @@ export const Navbar = () => {
             className="min-w-25 w-25"
           />
         </div>
-        <MenubarMenu>
-          <MenubarTrigger>
-            <SunMoon />
-          </MenubarTrigger>
-          <MenubarContent className="w-[220px] p-3">
-            <div className="space-y-2">
-              <CustomSelect />
-            </div>
-          </MenubarContent>
-        </MenubarMenu>
+        <Button
+          size="icon"
+          variant="ghost"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          {theme === "dark" ? <Sun /> : <Moon />}
+        </Button>
         <MenubarMenu>
           <DropdownMenuNavbar />
         </MenubarMenu>

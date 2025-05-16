@@ -29,7 +29,7 @@ export const DropdownMenuNavbar: React.FC = () => {
         <DropdownMenuTrigger>
           <Button type="button" variant="outline"><Menu /></Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-35">
+        <DropdownMenuContent align="end" className="w-35">
           <DropdownMenuLabel>Menu</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
