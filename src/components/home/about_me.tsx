@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import me_rounded from "@/assets/me_rounded.png";
 import * as motion from "motion/react-client";
 import { FiLinkedin } from "react-icons/fi";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 
 export const AboutMe: React.FC = () => {
   const intl = useIntl();

@@ -1,9 +1,9 @@
-import { Menubar, MenubarMenu, MenubarContent, MenubarItem, MenubarTrigger } from "@/components/ui/menubar";
+import { Menubar, MenubarMenu } from "@/components/ui/menubar";
 import logoBlack from '../../assets/logo_black.png'
 import logoWhite from '../../assets/logo_white.png'
 import { useTheme } from "@/hooks/useTheme";
 import { DropdownMenuNavbar } from "../ui/dropdown_menu_navbar";
-import { Languages, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
 import { DropdownTheme } from "../ui/dropdown_theme";
 
