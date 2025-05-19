@@ -25,9 +25,13 @@ interface ProjectDialogProps {
   project?: ProjecInfo | null;
 }
 
-export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose, project }) => {
+export const ProjectDialog: React.FC<ProjectDialogProps> = ({
+  open,
+  handleClose,
+  project,
+}) => {
   const isDesktop = UseMediaQuery("(min-width: 768px)");
-  
+
   const intl = useIntl();
 
   if (isDesktop) {
@@ -35,7 +39,9 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
       <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent className="sm:max-w-[1000px]">
           <DialogHeader>
-            <DialogTitle>{intl.formatMessage({ id: project?.title ?? 'aasd' })}</DialogTitle>
+            <DialogTitle>
+              {intl.formatMessage({ id: project?.title ?? "project.name" })}
+            </DialogTitle>
           </DialogHeader>
           <div className="flex gap-5">
             <div className="flex flex-col gap-3 min-w-60">
@@ -64,7 +70,9 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
             <div className="flex flex-col gap-5">
               <div>
                 <p className="leading-7 [&:not(:first-child)]:mt-6">
-                  {intl.formatMessage({ id: project?.about ?? 'asd' })}
+                  {intl.formatMessage({
+                    id: project?.about ?? "project.about",
+                  })}
                 </p>
               </div>
               <Separator />
@@ -90,7 +98,9 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
     <Drawer open={open} onOpenChange={handleClose}>
       <DrawerContent className="max-h-screen">
         <DrawerHeader className="text-center">
-          <DrawerTitle>{intl.formatMessage({ id: project?.title })}</DrawerTitle>
+          <DrawerTitle>
+            {intl.formatMessage({ id: project?.title ?? "project.name" })}
+          </DrawerTitle>
           <div className="flex flex-col gap-3">
             <AspectRatio ratio={16 / 9}>
               <img
@@ -101,7 +111,7 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
             </AspectRatio>
             <div>
               <p className="leading-6 text-justify [&:not(:first-child)]:mt-3">
-                {intl.formatMessage({ id: project?.about })}
+                {intl.formatMessage({ id: project?.about ?? "project.about" })}
               </p>
             </div>
             <Separator />
@@ -134,4 +144,4 @@ export const ProjectDialog: React.FC<ProjectDialogProps> = ({ open, handleClose,
       </DrawerContent>
     </Drawer>
   );
-}
+};

@@ -34,6 +34,8 @@
     "present": "Atual",
     "technologies": "Tecnologias",
     "projects_title": "Projetos",
+    "project.name": "Nome do Projeto",
+    "project.about": "Descrição do Projeto",
     "projects1.title": "Calisthenics Workout",
     "projects1.about": "Calisthenics Workout é uma rede social voltada para entusiastas da calistenia, onde os usuários podem criar, agendar e participar de treinos com data e hora marcadas. Além disso, a plataforma permite seguir outros usuários, incentivando a interação e o engajamento entre praticantes.",
     "projects2.title": "Todo-List",

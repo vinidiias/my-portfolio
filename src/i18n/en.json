@@ -34,6 +34,8 @@
     "present": "Present",
     "technologies": "Technologies",
     "projects_title": "Projects",
+    "project.name": "Name's Project",
+    "project.about": "Description's Project",
     "projects1.title": "Calisthenics Workout",
     "projects1.about": "Calisthenics Workout is a social network designed for calisthenics enthusiasts, where users can create, schedule, and join workouts with set dates and times. Additionally, the platform allows users to follow each other, encouraging interaction and engagement among practitioners.",
     "projects2.title": "Todo-List",
