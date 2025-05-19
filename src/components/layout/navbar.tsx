@@ -1,10 +1,11 @@
-import { Menubar, MenubarMenu } from "@/components/ui/menubar";
+import { Menubar, MenubarMenu, MenubarContent, MenubarItem, MenubarTrigger } from "@/components/ui/menubar";
 import logoBlack from '../../assets/logo_black.png'
 import logoWhite from '../../assets/logo_white.png'
 import { useTheme } from "@/hooks/useTheme";
 import { DropdownMenuNavbar } from "../ui/dropdown_menu_navbar";
-import { Moon, Sun } from "lucide-react";
+import { Languages, Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
+import { DropdownTheme } from "../ui/dropdown_theme";
 
 export const Navbar = () => {
     const { theme, setTheme } = useTheme()
@@ -17,13 +18,18 @@ export const Navbar = () => {
             className="min-w-25 w-25"
           />
         </div>
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
-          {theme === "dark" ? <Sun /> : <Moon />}
-        </Button>
+        <MenubarMenu>
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? <Sun /> : <Moon />}
+          </Button>
+        </MenubarMenu>
+        <MenubarMenu>
+          <DropdownTheme />
+        </MenubarMenu>
         <MenubarMenu>
           <DropdownMenuNavbar />
         </MenubarMenu>

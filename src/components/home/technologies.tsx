@@ -23,27 +23,17 @@ import vercel_black from "@/assets/vercel_black.svg";
 import vercel_white from "@/assets/vercel_white.svg";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { useTheme } from "@/hooks/useTheme";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import * as motion from "motion/react-client"
+import { UseMediaQuery } from "@/hooks/use_media_query";
+import { useIntl } from "react-intl";
 
 export const Technologies: React.FC = () => {
   const { theme } = useTheme()
 
-  const [isMobile, setIsMobile] = useState(false);
+  const intl = useIntl();
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    const handleChange = () => setIsMobile(mediaQuery.matches);
-
-    // define o valor inicial
-    handleChange();
-
-    // escuta mudanças
-    mediaQuery.addEventListener("change", handleChange);
-
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
+  const isMobile = UseMediaQuery('(max-width: 500px)');
 
   const items = useMemo(
     () => [
@@ -70,13 +60,11 @@ export const Technologies: React.FC = () => {
     [theme]
   );
 
-  console.log(isMobile)
-
   return (
     <section className="w-full" id="technologies">
         <div className="flex flex-col items-center gap-5 py-5">
           <h2 className="text-3xl text-center font-semibold mb-4 tracking-tight">
-            Tecnologias
+            {intl.formatMessage({ id: 'technologies' })}
           </h2>
           <div className="flex flex-wrap justify-center gap-y-10 gap-x-15 max-w-[1000px]">
             <TooltipProvider>

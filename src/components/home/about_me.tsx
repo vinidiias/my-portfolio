@@ -3,8 +3,11 @@ import { Button } from "../ui/button";
 import me_rounded from "@/assets/me_rounded.png";
 import * as motion from "motion/react-client";
 import { FiLinkedin } from "react-icons/fi";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export const AboutMe: React.FC = () => {
+  const intl = useIntl();
+
   return (
     <section className="m-auto w-full max-w-[1000px]" id="about">
       <div className="flex flex-col md:flex-row justify-center gap-10 w-full">
@@ -41,21 +44,21 @@ export const AboutMe: React.FC = () => {
               Vinícius de Oliveira Dias
             </h1>
             <h2 className="scroll-m-20 text-skill border-b pb-2 text-2xl font-semibold tracking-tight">
-              Desenvolvedor Front-End
+              {intl.formatMessage({ id: 'dev' })}
             </h2>
             <p className="text-lg leading-8 [&:not(:first-child)]:mt-6 text-center md:text-justify">
-              Seja bem vindo ao meu portfólio!
+              {intl.formatMessage({ id: 'welcome' })}
               <br />
-              Sou Desenvolvedor Front-End focado no uso de{" "}
+              {intl.formatMessage({ id: 'iam' })}{" "}
               <span className="text-skill font-medium">React.js</span>,{" "}
-              <span className="text-skill font-medium">Typescript</span> e
-              frameworks modernos.
+              <span className="text-skill font-medium">Typescript</span> {intl.formatMessage({ id: 'and' })}{" "}
+              {intl.formatMessage({ id: 'modern_frameworks' })}.
               <br />
-              Tenho fortes habilidades nas tecnologias como{" "}
+              {intl.formatMessage({ id: 'strong_skills' })}{" "}
               <span className="text-skill font-medium">React.js</span>,{" "}
               <span className="text-skill font-medium">TypeScript</span>,{" "}
               <span className="text-skill font-medium">Tailwind CSS</span>,{" "}
-              <span className="text-skill font-medium">Material-UI</span> e{" "}
+              <span className="text-skill font-medium">Material-UI</span> {intl.formatMessage({id: 'and'})}{" "}
               <span className="text-skill font-medium">Node.js</span>.
             </p>
           </div>
@@ -67,7 +70,7 @@ export const AboutMe: React.FC = () => {
             </Button>
             <Button variant={"outline"} className="bg-[#fffa]" asChild>
               <a href="https://wa.me/5545991330882" target="_blank">
-                Entrar em contato
+                {intl.formatMessage({ id: 'get_in_touch' })}
               </a>
             </Button>
             <Button variant="outline" size="icon" asChild>

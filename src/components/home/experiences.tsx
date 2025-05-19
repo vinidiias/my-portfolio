@@ -1,12 +1,15 @@
+import { useIntl } from "react-intl";
 import { TimelineLayout } from "../ui/timeline-layout";
 import * as motion from "motion/react-client"
 
 export const Experiences: React.FC = () => {
+    const intl = useIntl();
+
     return (
       <section className="w-full" id="experiences">
         <div className="flex flex-col items-center gap-10">
           <h2 className="text-3xl font-semibold mb-4 tracking-tight">
-            Experiências
+            {intl.formatMessage({ id: 'experience_title' })}
           </h2>
           <motion.div
             initial={{ opacity: 0, x: 300 }}

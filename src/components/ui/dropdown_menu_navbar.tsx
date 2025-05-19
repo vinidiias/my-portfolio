@@ -1,5 +1,5 @@
 import { Button } from "./button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./dropdown_menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "./dropdown_menu"
 import { Menu } from "lucide-react";
 
 interface redirectProps {
@@ -27,11 +27,9 @@ export const DropdownMenuNavbar: React.FC = () => {
     return (
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger>
-          <Button type="button" variant="outline"><Menu /></Button>
+          <Button type="button" variant="ghost"><Menu /></Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-35">
-          <DropdownMenuLabel>Menu</DropdownMenuLabel>
-          <DropdownMenuSeparator />
           <DropdownMenuGroup>
             {options.map((op, index) => (
               <DropdownMenuItem key={index} onSelect={(e) => redirect({ event: e, id: op.id })}>
