@@ -3,6 +3,8 @@ import css from "@/assets/css.svg";
 import js from "@/assets/js.svg";
 import react from "@/assets/react.svg";
 import ts from "@/assets/ts.svg";
+import next_white from "@/assets/next_white.svg";
+import next_black from "@/assets/next_black.svg";
 import tailwindcss from "@/assets/tailwindcss.svg";
 import bootstrap from "@/assets/bootstrap.svg";
 import query from "@/assets/query.svg";
@@ -42,20 +44,21 @@ export const Technologies: React.FC = () => {
       { id: 3, icon: js, title: "JavaScript", x: 300 },
       { id: 4, icon: react, title: "React", x: 300 },
       { id: 5, icon: ts, title: "Typescript", x: 300 },
-      { id: 6, icon: tailwindcss, title: "Tailwind CSS", x: 300 },
-      { id: 7, icon: bootstrap, title: "Bootstrap", x: 300 },
-      { id: 8, icon: query, title: "React Query", x: 300 },
-      { id: 9, icon: hook_form, title: "React Hook Form", x: 300 },
-      { id: 10, icon: theme === "dark" ? jotai : jotai_dark, title: "Jotai", x: 300 },
-      { id: 11, icon: material_ui, title: "Material UI", x: 300 },
-      { id: 12, icon: shadcn_ui, title: "Shadcn UI", x: 300 },
-      { id: 13, icon: node, title: "Node.js", x: 300 },
-      { id: 14, icon: theme === "dark" ? express_white : express_black, title: "Express.js", x: 300 },
-      { id: 15, icon: mongoDB, title: "MongoDB", x: 300 },
-      { id: 16, icon: docker, title: "Docker", x: 300 },
-      { id: 17, icon: git, title: "Git", x: 300 },
-      { id: 18, icon: theme === 'dark' ? github_white : github_black, title: "GitHub", x: 300 },
-      { id: 19, icon: theme === 'dark' ? vercel_black : vercel_white, title: "Vercel", x: 300 },
+      { id: 6, icon: theme === 'dark' ? next_white : next_black, title: "Next.js", x: 300 },
+      { id: 7, icon: tailwindcss, title: "Tailwind CSS", x: 300 },
+      { id: 8, icon: bootstrap, title: "Bootstrap", x: 300 },
+      { id: 9, icon: query, title: "React Query", x: 300 },
+      { id: 10, icon: hook_form, title: "React Hook Form", x: 300 },
+      { id: 11, icon: theme === "dark" ? jotai : jotai_dark, title: "Jotai", x: 300 },
+      { id: 12, icon: material_ui, title: "Material UI", x: 300 },
+      { id: 13, icon: shadcn_ui, title: "Shadcn UI", x: 300 },
+      { id: 14, icon: node, title: "Node.js", x: 300 },
+      { id: 15, icon: theme === "dark" ? express_white : express_black, title: "Express.js", x: 300 },
+      { id: 16, icon: mongoDB, title: "MongoDB", x: 300 },
+      { id: 17, icon: docker, title: "Docker", x: 300 },
+      { id: 18, icon: git, title: "Git", x: 300 },
+      { id: 19, icon: theme === 'dark' ? github_white : github_black, title: "GitHub", x: 300 },
+      { id: 20, icon: theme === 'dark' ? vercel_black : vercel_white, title: "Vercel", x: 300 },
     ],
     [theme]
   );

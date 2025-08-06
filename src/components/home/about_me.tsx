@@ -51,12 +51,14 @@ export const AboutMe: React.FC = () => {
               <br />
               {intl.formatMessage({ id: 'iam' })}{" "}
               <span className="text-skill font-medium">React.js</span>,{" "}
-              <span className="text-skill font-medium">Typescript</span> {intl.formatMessage({ id: 'and' })}{" "}
+              <span className="text-skill font-medium">Typescript</span>,{" "}
+              <span className="text-skill font-medium">Next.js</span> {intl.formatMessage({ id: 'and' })}{" "}
               {intl.formatMessage({ id: 'modern_frameworks' })}.
               <br />
               {intl.formatMessage({ id: 'strong_skills' })}{" "}
               <span className="text-skill font-medium">React.js</span>,{" "}
               <span className="text-skill font-medium">TypeScript</span>,{" "}
+              <span className="text-skill font-medium">Next.js</span>,{" "}
               <span className="text-skill font-medium">Tailwind CSS</span>,{" "}
               <span className="text-skill font-medium">Material-UI</span> {intl.formatMessage({id: 'and'})}{" "}
               <span className="text-skill font-medium">Node.js</span>.
