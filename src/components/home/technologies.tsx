@@ -23,6 +23,7 @@ import github_black from "@/assets/github_black.svg";
 import github_white from "@/assets/github_white.svg";
 import vercel_black from "@/assets/vercel_black.svg";
 import vercel_white from "@/assets/vercel_white.svg";
+import angular from "@/assets/angular.svg";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { useTheme } from "@/hooks/useTheme";
 import { useMemo } from "react";
@@ -43,64 +44,65 @@ export const Technologies: React.FC = () => {
       { id: 2, icon: css, title: "CSS", x: 300 },
       { id: 3, icon: js, title: "JavaScript", x: 300 },
       { id: 4, icon: react, title: "React", x: 300 },
-      { id: 5, icon: ts, title: "Typescript", x: 300 },
-      { id: 6, icon: theme === 'dark' ? next_white : next_black, title: "Next.js", x: 300 },
-      { id: 7, icon: tailwindcss, title: "Tailwind CSS", x: 300 },
-      { id: 8, icon: bootstrap, title: "Bootstrap", x: 300 },
-      { id: 9, icon: query, title: "React Query", x: 300 },
-      { id: 10, icon: hook_form, title: "React Hook Form", x: 300 },
-      { id: 11, icon: theme === "dark" ? jotai : jotai_dark, title: "Jotai", x: 300 },
-      { id: 12, icon: material_ui, title: "Material UI", x: 300 },
-      { id: 13, icon: shadcn_ui, title: "Shadcn UI", x: 300 },
-      { id: 14, icon: node, title: "Node.js", x: 300 },
-      { id: 15, icon: theme === "dark" ? express_white : express_black, title: "Express.js", x: 300 },
-      { id: 16, icon: mongoDB, title: "MongoDB", x: 300 },
-      { id: 17, icon: docker, title: "Docker", x: 300 },
-      { id: 18, icon: git, title: "Git", x: 300 },
-      { id: 19, icon: theme === 'dark' ? github_white : github_black, title: "GitHub", x: 300 },
-      { id: 20, icon: theme === 'dark' ? vercel_black : vercel_white, title: "Vercel", x: 300 },
+      { id: 5, icon: theme === 'dark' ? next_white : next_black, title: "Next.js", x: 300 },
+      { id: 6, icon: angular, title: "Angular", x: 300 },
+      { id: 7, icon: ts, title: "Typescript", x: 300 },
+      { id: 8, icon: tailwindcss, title: "Tailwind CSS", x: 300 },
+      { id: 9, icon: bootstrap, title: "Bootstrap", x: 300 },
+      { id: 10, icon: query, title: "React Query", x: 300 },
+      { id: 11, icon: hook_form, title: "React Hook Form", x: 300 },
+      { id: 12, icon: theme === "dark" ? jotai : jotai_dark, title: "Jotai", x: 300 },
+      { id: 13, icon: material_ui, title: "Material UI", x: 300 },
+      { id: 14, icon: shadcn_ui, title: "Shadcn UI", x: 300 },
+      { id: 15, icon: node, title: "Node.js", x: 300 },
+      { id: 16, icon: theme === "dark" ? express_white : express_black, title: "Express.js", x: 300 },
+      { id: 17, icon: mongoDB, title: "MongoDB", x: 300 },
+      { id: 18, icon: docker, title: "Docker", x: 300 },
+      { id: 19, icon: git, title: "Git", x: 300 },
+      { id: 20, icon: theme === 'dark' ? github_white : github_black, title: "GitHub", x: 300 },
+      { id: 21, icon: theme === 'dark' ? vercel_black : vercel_white, title: "Vercel", x: 300 },
     ],
     [theme]
   );
 
   return (
     <section className="w-full" id="technologies">
-        <div className="flex flex-col items-center gap-5 py-5">
-          <h2 className="text-3xl text-center font-semibold mb-4 tracking-tight">
-            {intl.formatMessage({ id: 'technologies' })}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-y-10 gap-x-15 max-w-[1000px]">
-            <TooltipProvider>
-              {items.map((item) => (
-                <motion.div
+      <div className="flex flex-col items-center gap-5 py-5">
+        <h2 className="text-3xl text-center font-semibold mb-4 tracking-tight">
+          {intl.formatMessage({ id: 'technologies' })}
+        </h2>
+        <div className="flex flex-wrap justify-center gap-y-10 gap-x-15 max-w-[1000px]">
+          <TooltipProvider>
+            {items.map((item) => (
+              <motion.div
                 key={item.id}
-                  className="border-1 border-gray bg-card flex items-center p-3 px-4 rounded shadow"
-                  whileHover={{
-                    scale: [null, 1.2, 1.2],
-                    transition: {
-                      duration: 0.5,
-                      times: [0, 0.6, 1],
-                      ease: ["easeInOut", "easeOut"],
-                    },
-                  }}
-                  initial={{ opacity: 0, x: !isMobile ? 50 : item.x }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1 }}
-                  viewport={{ once: true }}
-                >
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <img src={item.icon} alt={item.title} className="w-15 max-md:w-10" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{item.title}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </motion.div>
-              ))}
-            </TooltipProvider>
-          </div>
+                className="border-1 border-gray bg-card flex items-center p-3 px-4 rounded shadow"
+                whileHover={{
+                  scale: [null, 1.2, 1.2],
+                  transition: {
+                    duration: 0.5,
+                    times: [0, 0.6, 1],
+                    ease: ["easeInOut", "easeOut"],
+                  },
+                }}
+                initial={{ opacity: 0, x: !isMobile ? 50 : item.x }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <img src={item.icon} alt={item.title} className="w-15 max-md:w-10" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{item.title}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </motion.div>
+            ))}
+          </TooltipProvider>
         </div>
+      </div>
     </section>
   );
 };

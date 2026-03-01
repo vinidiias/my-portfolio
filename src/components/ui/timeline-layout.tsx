@@ -13,7 +13,7 @@ export const TimelineLayout = () => {
 
   return (
     <Timeline>
-      {Array.from({ length: 7 }).map((_, index) => {
+      {Array.from({ length: 8 }).map((_, index) => {
         const dateFrom = intl.formatMessage({
           id: `experience${index + 1}.date.from`,
         });
